@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Helm</h1>
+      <p>Deploy feito via Helm</p>
+    </body>
+    </html>
