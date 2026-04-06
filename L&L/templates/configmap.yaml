@@ -1,12 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-html
+  name: {{ include "nginx.fullname" . }}-html
+  labels:
+    {{- include "nginx.labels" . | nindent 4 }}
 data:
   index.html: |
-    <html>
-    <body>
-      <h1>Helm</h1>
-      <p>Deploy feito via Helm</p>
-    </body>
-    </html>
+    {{- .Values.configmap.html | nindent 4 }}
