@@ -1,7 +1,19 @@
 replicaCount: 1
+
 image:
   repository: nginx
+  tag: "1.25"
   pullPolicy: IfNotPresent
+
 service:
   type: ClusterIP
   port: 80
+
+configmap:
+  html: |
+    <html>
+    <body>
+      <h1>Helm</h1>
+      <p>Deploy feito via Helm</p>
+    </body>
+    </html>
